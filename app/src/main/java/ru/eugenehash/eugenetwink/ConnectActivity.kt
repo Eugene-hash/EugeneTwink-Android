@@ -41,7 +41,7 @@ class ConnectActivity : Activity() {
     }
 
     @Suppress("UNUSED_PARAMETER")
-    private fun permissionsCallback(results: Map<String, Boolean>) {
+    private fun permissionsCallback(ignoredResults: Map<String, Boolean>) {
         if (!checkSelfPermissions()) finish()
         else checkEnableBluetooth()
     }
@@ -51,7 +51,7 @@ class ConnectActivity : Activity() {
     }
 
     private fun checkEnableBluetooth() {
-        if (bluetoothManager.adapter.isEnabled) return activityUpdateUI()
+        if (bluetoothAdapter.isEnabled) return activityUpdateUI()
         val intent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
         connect.setOnClickListener { bluetooth.launch(intent) }
         bluetooth.launch(intent)

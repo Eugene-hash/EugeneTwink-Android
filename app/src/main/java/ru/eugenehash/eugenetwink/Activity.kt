@@ -1,5 +1,6 @@
 package ru.eugenehash.eugenetwink
 
+import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.Intent
@@ -17,8 +18,8 @@ open class Activity : AppCompatActivity() {
     val preferences: SharedPreferences
         get() = getPreferences(MODE_PRIVATE)
 
-    val bluetoothManager: BluetoothManager
-        get() = getSystemService(BluetoothManager::class.java)
+    val bluetoothAdapter: BluetoothAdapter
+        get() = getSystemService(BluetoothManager::class.java).adapter
 
     fun registerForRequestPermission(callback: ActivityResultCallback<Boolean>) =
         registerForActivityResult(RequestPermission(), callback)

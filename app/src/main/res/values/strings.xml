@@ -1,4 +1,5 @@
 <resources>
     <string name="button_connect_device">Connect device</string>
     <string name="button_enable_bluetooth">Enable Bluetooth</string>
+    <string name="button_update_list_device">Update list device</string>
 </resources>

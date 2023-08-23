@@ -15,6 +15,7 @@ class MainActivity : Activity() {
     }
 
     override fun onDestroy() {
+        bluetoothSerial.destroy()
         super.onDestroy()
         _binding = null
     }

@@ -10,8 +10,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
+import ru.eugenehash.eugenetwink.bluetooth.ConnectThread
 import ru.eugenehash.eugenetwink.databinding.ActivityConnectBinding
 
 class ConnectActivity : Activity() {
@@ -81,16 +81,31 @@ class ConnectActivity : Activity() {
         if (address != null) connectDeviceForAddress(address)
     }
 
+    @SuppressLint("MissingPermission")
     private fun connectDeviceForAddress(address: String) {
-        toastTextShow("DEVICE_ADDRESS | $address")
-    }
-
-    private fun toastTextShow(text: String) {
-        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
+        val device = bluetoothAdapter.getRemoteDevice(address)
+        ConnectThread(device, ConnectThreadCallback()).start()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    inner class ConnectThreadCallback: ConnectThread.Callback {
+
+        override fun onPreExecute() {
+            connect.isEnabled = false
+        }
+
+        @Suppress("DEPRECATION")
+        override fun onPostExecuteSuccess() {
+            val intent = KIntent(this@ConnectActivity, SettingActivity::class)
+            startActivity(intent); overridePendingTransition(0, 0); finish()
+        }
+
+        override fun onPostExecuteError() {
+            connect.isEnabled = true
+        }
     }
 }

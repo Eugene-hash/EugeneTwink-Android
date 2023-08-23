@@ -11,9 +11,13 @@ import androidx.activity.result.contract.ActivityResultContracts.RequestMultiple
 import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AppCompatActivity
+import ru.eugenehash.eugenetwink.bluetooth.BluetoothSerial
 import kotlin.reflect.KClass
 
 open class Activity : AppCompatActivity() {
+
+    val bluetoothSerial: BluetoothSerial
+        get() = BluetoothSerial.instance
 
     val preferences: SharedPreferences
         get() = getPreferences(MODE_PRIVATE)

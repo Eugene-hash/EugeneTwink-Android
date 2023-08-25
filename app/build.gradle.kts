@@ -40,7 +40,7 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
         debug {
             applicationIdSuffix = ".debug"
@@ -49,6 +49,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = false
             applicationIdSuffix = ".compress"
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -65,6 +66,8 @@ android {
 }
 
 dependencies {
+
+    implementation("com.airbnb.android:lottie:6.1.0")
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")

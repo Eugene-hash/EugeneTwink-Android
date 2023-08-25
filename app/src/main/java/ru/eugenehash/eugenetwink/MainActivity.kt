@@ -5,9 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.NavigationUI
 import ru.eugenehash.eugenetwink.databinding.ActivityMainBinding
 import ru.eugenehash.eugenetwink.setting.SettingModel
 
@@ -15,9 +13,6 @@ class MainActivity : Activity() {
 
     private val binding get() = _binding!!
     private var _binding: ActivityMainBinding? = null
-    private val appBarConfiguration: AppBarConfiguration by lazy {
-        AppBarConfiguration(setOf(R.id.navigation_setting, R.id.navigation_modes))
-    }
 
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +25,7 @@ class MainActivity : Activity() {
 
         binding.navHost.post {
             val navController = Navigation.findNavController(binding.navHost)
-            setupActionBarWithNavController(navController, appBarConfiguration)
-            binding.navView.setupWithNavController(navController)
+            NavigationUI.setupWithNavController(binding.navView, navController)
         }
     }
 

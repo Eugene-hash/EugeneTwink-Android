@@ -34,6 +34,7 @@ class ConnectActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConnectBinding.inflate(layoutInflater)
+        binding!!.version.text = BuildConfig.VERSION_NAME
         setContentView(binding!!.root)
 
         if (checkSelfPermissions()) checkEnableBluetooth()

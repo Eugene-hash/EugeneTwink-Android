@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_setting">
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="ru.eugenehash.eugenetwink.ui.setting.SettingFragment"
+        android:label="@string/title_setting"
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/navigation_modes"
+        android:name="ru.eugenehash.eugenetwink.ui.modes.ModesFragment"
+        android:label="@string/title_modes"
+        tools:layout="@layout/fragment_modes" />
+
+</navigation>

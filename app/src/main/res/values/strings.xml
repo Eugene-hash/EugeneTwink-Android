@@ -1,5 +1,8 @@
 <resources>
     <string name="button_connect_device">Connect device</string>
     <string name="button_enable_bluetooth">Enable Bluetooth</string>
+    <string name="button_open_camera">Open camera</string>
     <string name="button_update_list_device">Update list device</string>
+    <string name="title_modes">Mode list</string>
+    <string name="title_setting">Setting</string>
 </resources>

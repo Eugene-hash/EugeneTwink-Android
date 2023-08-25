@@ -8,13 +8,13 @@ import androidx.annotation.IntDef
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ru.eugenehash.eugenetwink.databinding.RecyclerItemBinding
+import ru.eugenehash.eugenetwink.databinding.DeviceItemBinding
 
 class RecyclerAdapter(private val listener: (device: Device) -> Unit) :
     ListAdapter<RecyclerAdapter.Device, RecyclerAdapter.Holder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        Holder(RecyclerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        Holder(DeviceItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.itemView.setOnClickListener { listener(currentList[position]) }
@@ -31,7 +31,7 @@ class RecyclerAdapter(private val listener: (device: Device) -> Unit) :
         override fun areItemsTheSame(oldItem: Device, newItem: Device) = oldItem.address == newItem.address
     }
 
-    class Holder(binding: RecyclerItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class Holder(binding: DeviceItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         val name = binding.name
         val state = binding.state

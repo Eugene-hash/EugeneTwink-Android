@@ -7,4 +7,10 @@
     android:layout_marginBottom="?attr/actionBarSize"
     tools:context=".ui.modes.ModesFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/modes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/mode_item" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

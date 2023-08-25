@@ -3,7 +3,6 @@ package ru.eugenehash.eugenetwink.setting
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-@Suppress("MemberVisibilityCanBePrivate")
 class SettingModel : ViewModel() {
 
     lateinit var bright: MutableLiveData<Int>

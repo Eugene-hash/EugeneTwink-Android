@@ -79,6 +79,11 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.0")
 
+    implementation("androidx.camera:camera-core:1.3.0-beta02")
+    implementation("androidx.camera:camera-camera2:1.3.0-beta02")
+    implementation("androidx.camera:camera-lifecycle:1.3.0-beta02")
+    implementation("androidx.camera:camera-view:1.3.0-beta02")
+
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22")

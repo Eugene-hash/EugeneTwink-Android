@@ -65,8 +65,7 @@ class DeviceActivity : Activity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 mutableSet.add(Device(it.alias!!, it.address, it.bondState))
             } else mutableSet.add(Device(it.name, it.address, it.bondState))
-        }
-        return mutableSet.toList()
+        } return mutableSet.toList()
     }
 
     private val receiver = object : BroadcastReceiver() {
